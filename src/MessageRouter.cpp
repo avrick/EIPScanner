@@ -47,7 +47,8 @@ namespace eipScanner {
 
 		CommonPacketItemFactory commonPacketItemFactory;
 		CommonPacket commonPacket;
-        commonPacket << commonPacketItemFactory.createT2OSockaddrInfo(_implicit_port, 0);
+		commonPacket << commonPacketItemFactory.createNullAddressItem();
+        // commonPacket << commonPacketItemFactory.createT2OSockaddrInfo(_implicit_port, 0); Russel's code
 		commonPacket << commonPacketItemFactory.createUnconnectedDataItem(request.pack());
 
 		for(auto& item : additionalPacketItems) {
